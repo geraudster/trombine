@@ -5,3 +5,15 @@
 #   email: bob@gmail.com
 #   password: secret
 #   fullname: Bob
+Organization(root):
+        name: root orga
+
+Organization(child):
+        name: child
+        parent: root
+
+Person(toto):
+        email: toto@example.com
+        firstName: Toto
+        lastName: Dupont
+        organization: child

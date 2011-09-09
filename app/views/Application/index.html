@@ -1,4 +1,6 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-<h1>A trombine will be here</h1>
+#{list items:persons, as:'person'}
+  #{display person:person /}
+#{/list}

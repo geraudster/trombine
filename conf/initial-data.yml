@@ -1,0 +1,28 @@
+Organization(root):
+        name: root orga
+
+Organization(metallica):
+        name: Metallica
+        parent: root
+
+Organization(aerosmith):
+        name: Aerosmith
+        parent: root
+
+Person(lars):
+        email: lulrich@example.com
+        firstName: Lars
+        lastName: Ulrich
+        organization: metallica
+
+Person(james):
+        email: jhetfield@example.com
+        firstName: James
+        lastName: Hetfield
+        organization: metallica
+
+Person(steven):
+        email: s.tyler@example.com
+        firstName: Steven
+        lastName: Tyler
+        organization: aerosmith

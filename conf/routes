@@ -15,5 +15,8 @@ GET     /public/                                staticDir:public
 GET     /person/{id}                            Application.showPerson
 GET     /organization/{id}                      Application.showOrganization
 
+# Import CRUD routes
+*      /admin                                   module:crud
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

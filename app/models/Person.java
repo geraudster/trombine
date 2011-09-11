@@ -20,4 +20,8 @@ public class Person extends Model {
 	this.firstName = firstName;
 	this.organization = null;
     }
+
+    public String toString(){
+        return firstName + " " + lastName;
+    }
 }

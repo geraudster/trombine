@@ -31,4 +31,8 @@ public class Organization extends Model {
         this.name = name;
         this.parent = Organization.findById(parentId);
     }
+
+    public String toString(){
+        return name;
+    }
 }

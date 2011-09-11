@@ -27,6 +27,12 @@ public class BasicTest extends UnitTest {
 	
 	assertNotNull(child);
 	assertEquals("Root orga", child.parent.name);
+
+	new Organization("Child2", rootOrga.id).save();
+	 child = Organization.find("byName", "Child2").first();
+	
+	assertNotNull(child);
+	assertEquals("Root orga", child.parent.name);
     }
 
     @Test
@@ -34,7 +40,7 @@ public class BasicTest extends UnitTest {
 	Fixtures.loadModels("data.yml");
 	
 	assertEquals(2, Organization.count());
-	assertEquals(1, Person.count());
+	assertEquals(2, Person.count());
 
 	Person toto = Person.find("byEmail", "toto@example.com").first();
 
@@ -44,6 +50,9 @@ public class BasicTest extends UnitTest {
 	assertNotNull(toto.organization);
 	assertEquals("child", toto.organization.name);
 	assertEquals("root orga", toto.organization.parent.name);
+
+	Organization orga = Organization.find("byName", "child").first();
+	assertEquals(2, orga.persons.size());
     }
 
 }

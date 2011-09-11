@@ -17,3 +17,9 @@ Person(toto):
         firstName: Toto
         lastName: Dupont
         organization: child
+
+Person(tutu):
+        email: tutu@example.com
+        firstName: Tutu
+        lastName: Dopont
+        organization: child

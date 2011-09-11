@@ -1,6 +1,26 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
 
-#{list items:persons, as:'person'}
-  #{display person:person /}
+
+<h2>Add an orga</h2>
+#{form @Application.addOrganization()}
+<p>
+  <label for="name">Organization name</label>
+  <input type="text" name="name" id="name" />
+</p>
+<p>
+  <label for="parent">Parent</label>
+  <select name="parent" id="parent">
+  #{list items:organizations, as:'organization'}
+    <option value="${organization.name}">${organization.name}</option>
+  #{/list}
+  </select>
+</p>
+<p>
+  <input type="submit" value="Create"/>
+</p>
+#{/form}
+
+#{list items:organizations, as:'organization'}
+  #{displayOrganization organization:organization /}
 #{/list}

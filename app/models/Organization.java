@@ -12,6 +12,9 @@ public class Organization extends Model {
     @ManyToOne
     public Organization parent;
 
+    @OneToMany(mappedBy="organization", cascade=CascadeType.ALL)
+    public List<Person> persons;
+
     public Organization(String name){
 	this.name = name;
 
@@ -22,5 +25,10 @@ public class Organization extends Model {
     public Organization(String name, Organization parent){
 	this.name = name;
 	this.parent = parent;
+    }
+
+    public Organization(String name, Long parentId){
+        this.name = name;
+        this.parent = Organization.findById(parentId);
     }
 }

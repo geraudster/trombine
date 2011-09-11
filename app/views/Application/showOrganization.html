@@ -1,0 +1,7 @@
+#{extends 'main.html' /}
+#{set title:'Organization details' /}
+
+<h2 class="organization">${organization.name}</h2>
+#{list items:organization.persons, as:'person'}
+  #{display person:person /}
+#{/list}
